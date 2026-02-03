@@ -1,0 +1,138 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{enumitem}
+
+\title{University Timetable Management System (UTMS) - SRS}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Definition}
+
+In universities, preparing academic timetables is a complex and time-consuming task. Universities have multiple departments, many courses, faculty members, classrooms, and laboratories. In many cases, timetables are created manually using paper or spreadsheet software.
+
+Manual timetable preparation causes several problems.
+
+Major problems include:
+\begin{itemize}
+    \item A faculty member may be assigned to more than one class at the same time.
+    \item Classrooms or laboratories may be allocated to multiple courses at the same time.
+    \item Faculty workload may not be distributed evenly.
+    \item Updating or modifying timetables takes a lot of time and effort.
+    \item Errors are difficult to detect and correct manually.
+\end{itemize}
+
+These issues affect academic efficiency and create confusion for faculty members and students.
+
+The University Timetable Management System (UTMS) is a software system designed to automate the creation, management, and modification of university academic timetables. The system reduces manual effort, avoids scheduling conflicts, and improves accuracy.
+
+Objectives of the system:
+\begin{itemize}
+    \item To automatically generate university timetables.
+    \item To prevent faculty and room scheduling conflicts.
+    \item To reduce manual work and human errors.
+    \item To provide easy access to timetables for university faculty and students.
+    \item To find available rooms for extra or urgent classes when needed.
+\end{itemize}
+
+\section{Project Scope}
+
+The University Timetable Management System is designed only for universities.
+
+The system:
+\begin{itemize}
+    \item Manages university departments, courses, subjects, faculty, classrooms, laboratories, and time slots.
+    \item Supports different academic activities such as lectures, laboratory sessions, and tutorials.
+    \item Generates and maintains department-wise and course-wise timetables.
+    \item Allows authorized users to update and modify timetables when required.
+    \item Can display available rooms for any given time period.
+    \item Supports finding rooms for extra or urgent classes.
+    \item Can be extended later as an API-based system for integration with other university systems.
+\end{itemize}
+
+\section{Software Requirement Analysis}
+
+\subsection{System Modules}
+
+\textbf{(a) Admin Module}
+
+The Admin module is used by the university academic administration.
+\begin{itemize}
+    \item Add and manage departments and courses.
+    \item Add faculty and subject information.
+    \item Define classrooms, laboratories, and available time slots.
+    \item Generate university timetables automatically.
+    \item Modify and update timetables.
+    \item Resolve timetable conflicts.
+    \item Check which rooms are free at a given time.
+    \item Assign free rooms to regular or extra classes quickly.
+\end{itemize}
+
+\textbf{(b) Faculty Module}
+
+The Faculty module is used by university teaching staff.
+\begin{itemize}
+    \item View assigned teaching timetable.
+    \item View subject details and workload information.
+    \item Submit timetable change requests (optional).
+\end{itemize}
+
+\textbf{(c) Student Module}
+
+The Student module is used by university students.
+\begin{itemize}
+    \item View class timetable.
+    \item View subject-wise and day-wise schedule.
+\end{itemize}
+
+\subsection{Functional Requirements}
+
+Functional requirements describe what the system must do.
+\begin{itemize}
+    \item The system shall allow the admin to create and manage university departments.
+    \item The system shall allow the admin to add faculty members, courses, and subjects.
+    \item The system shall generate timetables without faculty or room conflicts.
+    \item The system shall allow faculty members to view their assigned timetable.
+    \item The system shall allow students to view their class timetable.
+    \item The system shall allow the admin to update and modify timetables when needed.
+    \item The system shall store all timetable and user data in a database.
+    \item The system shall support searching timetables by department, faculty, or subject.
+    \item The system shall display available rooms for a given time period, showing which rooms are free for scheduling or immediate use.
+    \item The system shall allow filtering of available rooms by building, room type, or capacity.
+    \item The system shall allow the admin to assign free rooms to regular classes or extra/urgent classes.
+\end{itemize}
+
+\subsection{Non-Functional Requirements}
+
+Non-functional requirements describe how the system performs.
+
+\textbf{Performance:}
+\begin{itemize}
+    \item The system shall generate and display timetables within 2 seconds.
+    \item The system shall quickly display available rooms for any time period, including extra/urgent classes.
+\end{itemize}
+
+\textbf{Security:}
+\begin{itemize}
+    \item Only authorized admin users shall be allowed to add or modify data.
+    \item Faculty and students shall have read-only access to timetables.
+\end{itemize}
+
+\textbf{Reliability:}
+\begin{itemize}
+    \item The system shall be available during university working hours.
+\end{itemize}
+
+\textbf{Usability:}
+\begin{itemize}
+    \item The system shall provide a simple and user-friendly interface.
+    \item Navigation, menus, and buttons shall be clear and easy to understand.
+\end{itemize}
+
+\end{document}
