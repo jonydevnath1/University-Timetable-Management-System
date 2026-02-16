@@ -4,15 +4,29 @@
 \usepackage{geometry}
 \geometry{a4paper, margin=1in}
 \usepackage{enumitem}
-
-\title{University Timetable Management System (UTMS) - SRS}
-\author{}
-\date{}
+\usepackage{graphicx}
+\usepackage{float}
 
 \begin{document}
 
-\maketitle
+% -------------------------
+% Title Page
+% -------------------------
+\begin{titlepage}
+    \centering
+    \vspace*{\fill} % vertically center
+    {\Huge University Timetable Management System (UTMS) \par}
+    \vspace{1cm}
+    {\Large Software Requirement Specification (SRS) \par}
+    \vspace*{\fill} % fill remaining space
+    \thispagestyle{empty} % removes page number
+\end{titlepage}
 
+\clearpage  % Start main content on a new page
+
+% -------------------------
+% Problem Definition Section
+% -------------------------
 \section{Problem Definition}
 
 In universities, preparing academic timetables is a complex and time-consuming task. Universities have multiple departments, many courses, faculty members, classrooms, and laboratories. In many cases, timetables are created manually using paper or spreadsheet software.
@@ -134,5 +148,3 @@ Non-functional requirements describe how the system performs.
     \item The system shall provide a simple and user-friendly interface.
     \item Navigation, menus, and buttons shall be clear and easy to understand.
 \end{itemize}
-
-\end{document}
