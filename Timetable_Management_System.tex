@@ -148,3 +148,125 @@ Non-functional requirements describe how the system performs.
     \item The system shall provide a simple and user-friendly interface.
     \item Navigation, menus, and buttons shall be clear and easy to understand.
 \end{itemize}
+
+
+\section{Project Duration}
+
+The estimated duration to complete the University Timetable Management System (UTMS) is 12 weeks.
+
+The project is divided into the following phases:
+
+\begin{itemize}
+    \item \textbf{Requirement Gathering and SRS Preparation – 2 weeks.} \par
+    Collect requirements, finalize functional \& non-functional needs, project scope, and objectives.
+    
+    \item \textbf{System Analysis and Design (UML, Data Modeling) – 2 weeks.} \par
+    Prepare use case diagrams, class diagrams, activity and sequence diagrams, and database schema.
+    
+    \item \textbf{Database Setup and Tables Creation – 2 weeks.} \par
+    Create tables for Departments, Courses, Subjects, Faculty, Rooms, and Timetable.
+    
+    \item \textbf{Frontend and Backend Development – 4 weeks.} \par
+    Develop system modules for Admin, Faculty, and Student; implement timetable generation, conflict resolution, and room availability features.
+    
+    \item \textbf{Integration and Testing – 1 week.} \par
+    Integrate all modules, test timetable generation, conflict resolution, and room availability.
+    
+    \item \textbf{Final Deployment and Documentation – 1 week.} \par
+    Deploy the system, prepare user manual, and complete the final report.
+\end{itemize}
+
+
+\section{Data Modeling}
+
+Data modeling describes how data is stored, organized, and related in the system.  
+The UTMS uses a structured database to store university timetable information.
+
+\subsection{Data Dictionary}
+
+\subsubsection{Department Table}
+
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Field Name} & \textbf{Data Type} & \textbf{Description} \\
+\hline
+DeptID & Integer & Unique department ID (Primary Key) \\
+DeptName & Varchar & Name of the department \\
+\hline
+\end{tabular}
+
+\subsubsection{Faculty Table}
+
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Field Name} & \textbf{Data Type} & \textbf{Description} \\
+\hline
+FacultyID & Integer & Unique faculty ID (Primary Key) \\
+FacultyName & Varchar & Name of the faculty member \\
+DeptID & Integer & Department ID (Foreign Key) \\
+\hline
+\end{tabular}
+
+\subsubsection{Course Table}
+
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Field Name} & \textbf{Data Type} & \textbf{Description} \\
+\hline
+CourseID & Integer & Unique course ID (Primary Key) \\
+CourseName & Varchar & Name of the course \\
+DeptID & Integer & Department ID (Foreign Key) \\
+\hline
+\end{tabular}
+
+\subsubsection{Subject Table}
+
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Field Name} & \textbf{Data Type} & \textbf{Description} \\
+\hline
+SubjectID & Integer & Unique subject ID (Primary Key) \\
+SubjectName & Varchar & Name of the subject \\
+CourseID & Integer & Course ID (Foreign Key) \\
+FacultyID & Integer & Assigned faculty ID (Foreign Key) \\
+\hline
+\end{tabular}
+
+\subsubsection{Room Table}
+
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Field Name} & \textbf{Data Type} & \textbf{Description} \\
+\hline
+RoomID & Integer & Unique room ID (Primary Key) \\
+RoomNumber & Varchar & Room number \\
+RoomType & Varchar & Lecture room or laboratory \\
+Capacity & Integer & Maximum student capacity \\
+\hline
+\end{tabular}
+
+\subsubsection{Timetable Table}
+
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Field Name} & \textbf{Data Type} & \textbf{Description} \\
+\hline
+TimetableID & Integer & Unique timetable ID (Primary Key) \\
+DeptID & Integer & Department ID (Foreign Key) \\
+SubjectID & Integer & Subject ID (Foreign Key) \\
+FacultyID & Integer & Faculty ID (Foreign Key) \\
+RoomID & Integer & Room ID (Foreign Key) \\
+Day & Varchar & Day of the week \\
+TimeSlot & Varchar & Time period \\
+\hline
+\end{tabular}
+
+\subsection{Relationships}
+
+\begin{itemize}
+    \item One department can have many courses.
+    \item One course can have many subjects.
+    \item One faculty member can teach many subjects.
+    \item One room can be used in many timetable entries, but not at the same time.
+    \item Timetable links faculty, subject, room, and time slot.
+\end{itemize}
